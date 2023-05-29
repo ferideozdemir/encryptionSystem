@@ -1,0 +1,1364 @@
+//
+//Written by GowinSynthesis
+//Product Version "GowinSynthesis V1.9.8.10"
+//Sat May 27 11:27:24 2023
+
+//Source file index table:
+//file0 "\C:/Users/furka/Desktop/sifrelemeSistemi/src/verilog.v"
+`timescale 100 ps/100 ps
+module sifrelemeSistemi (
+  butonA,
+  butonB,
+  clk,
+  led
+)
+;
+input butonA;
+input butonB;
+input clk;
+output [2:0] led;
+wire butonA_d;
+wire butonB_d;
+wire clk_d;
+wire n1051_3;
+wire n502_3;
+wire n503_3;
+wire n504_3;
+wire n505_3;
+wire n506_3;
+wire n507_3;
+wire n516_3;
+wire n518_3;
+wire n495_3;
+wire n497_3;
+wire n715_3;
+wire n721_3;
+wire n723_3;
+wire sifreDogrulama_6;
+wire yanlis_8;
+wire n703_6;
+wire n322_6;
+wire led_1_6;
+wire n250_9;
+wire n502_5;
+wire n503_4;
+wire n505_4;
+wire n507_4;
+wire n515_4;
+wire n497_4;
+wire n218_5;
+wire n320_9;
+wire n322_7;
+wire n322_8;
+wire n218_6;
+wire n218_7;
+wire n218_8;
+wire n320_10;
+wire n218_9;
+wire n218_10;
+wire n218_11;
+wire n218_12;
+wire n218_13;
+wire n218_14;
+wire n218_15;
+wire n320_11;
+wire n320_12;
+wire n320_13;
+wire n502_7;
+wire butonSayaci_3_8;
+wire n93_11;
+wire n320_15;
+wire n504_6;
+wire n519_5;
+wire n517_5;
+wire n515_6;
+wire n218_17;
+wire n38_11;
+wire n1019_6;
+wire n496_5;
+wire butonuAlgila;
+wire sifreDogrulama;
+wire sifreKaydetme;
+wire dogru;
+wire yanlis;
+wire n37_1;
+wire n37_2;
+wire n36_1;
+wire n36_2;
+wire n35_1;
+wire n35_2;
+wire n34_1;
+wire n34_2;
+wire n33_1;
+wire n33_2;
+wire n32_1;
+wire n32_2;
+wire n31_1;
+wire n31_2;
+wire n30_1;
+wire n30_2;
+wire n29_1;
+wire n29_2;
+wire n28_1;
+wire n28_2;
+wire n27_1;
+wire n27_2;
+wire n26_1;
+wire n26_2;
+wire n25_1;
+wire n25_2;
+wire n24_1;
+wire n24_2;
+wire n23_1;
+wire n23_2;
+wire n22_1;
+wire n22_2;
+wire n21_1;
+wire n21_2;
+wire n20_1;
+wire n20_2;
+wire n19_1;
+wire n19_2;
+wire n18_1;
+wire n18_2;
+wire n17_1;
+wire n17_2;
+wire n16_1;
+wire n16_2;
+wire n15_1;
+wire n15_2;
+wire n14_1;
+wire n14_2;
+wire n13_1;
+wire n13_2;
+wire n12_1;
+wire n12_2;
+wire n11_1;
+wire n11_2;
+wire n10_1;
+wire n10_2;
+wire n9_1;
+wire n9_2;
+wire n8_1;
+wire n8_2;
+wire n7_1;
+wire n7_0_COUT;
+wire n446_1_SUM;
+wire n446_3;
+wire n447_1_SUM;
+wire n447_3;
+wire n448_1_SUM;
+wire n448_3;
+wire n449_1_SUM;
+wire n449_3;
+wire n450_1_SUM;
+wire n450_3;
+wire n451_1_SUM;
+wire n451_3;
+wire [31:0] sayac;
+wire [2:0] butonSayaci;
+wire [5:0] sifre;
+wire [5:0] denenenSifre;
+wire [2:0] led_d;
+wire VCC;
+wire GND;
+  IBUF butonA_ibuf (
+    .O(butonA_d),
+    .I(butonA) 
+);
+  IBUF butonB_ibuf (
+    .O(butonB_d),
+    .I(butonB) 
+);
+  IBUF clk_ibuf (
+    .O(clk_d),
+    .I(clk) 
+);
+  OBUF led_0_obuf (
+    .O(led[0]),
+    .I(led_d[0]) 
+);
+  OBUF led_1_obuf (
+    .O(led[1]),
+    .I(led_d[1]) 
+);
+  OBUF led_2_obuf (
+    .O(led[2]),
+    .I(led_d[2]) 
+);
+  LUT3 n1051_s0 (
+    .F(n1051_3),
+    .I0(butonA_d),
+    .I1(butonB_d),
+    .I2(butonuAlgila) 
+);
+defparam n1051_s0.INIT=8'h60;
+  LUT4 n502_s0 (
+    .F(n502_3),
+    .I0(butonSayaci[1]),
+    .I1(butonSayaci[2]),
+    .I2(n502_7),
+    .I3(n502_5) 
+);
+defparam n502_s0.INIT=16'h4000;
+  LUT2 n503_s0 (
+    .F(n503_3),
+    .I0(n502_7),
+    .I1(n503_4) 
+);
+defparam n503_s0.INIT=4'h8;
+  LUT3 n504_s0 (
+    .F(n504_3),
+    .I0(butonSayaci[1]),
+    .I1(n502_7),
+    .I2(n504_6) 
+);
+defparam n504_s0.INIT=8'h80;
+  LUT2 n505_s0 (
+    .F(n505_3),
+    .I0(n502_7),
+    .I1(n505_4) 
+);
+defparam n505_s0.INIT=4'h8;
+  LUT3 n506_s0 (
+    .F(n506_3),
+    .I0(butonSayaci[1]),
+    .I1(n502_7),
+    .I2(n504_6) 
+);
+defparam n506_s0.INIT=8'h40;
+  LUT2 n507_s0 (
+    .F(n507_3),
+    .I0(n502_7),
+    .I1(n507_4) 
+);
+defparam n507_s0.INIT=4'h8;
+  LUT3 n516_s0 (
+    .F(n516_3),
+    .I0(butonSayaci[1]),
+    .I1(n504_6),
+    .I2(n515_4) 
+);
+defparam n516_s0.INIT=8'h80;
+  LUT3 n518_s0 (
+    .F(n518_3),
+    .I0(butonSayaci[1]),
+    .I1(n504_6),
+    .I2(n515_4) 
+);
+defparam n518_s0.INIT=8'h40;
+  LUT4 n495_s0 (
+    .F(n495_3),
+    .I0(butonSayaci[1]),
+    .I1(sifreKaydetme),
+    .I2(n502_5),
+    .I3(butonSayaci[2]) 
+);
+defparam n495_s0.INIT=16'hBFA0;
+  LUT4 n497_s0 (
+    .F(n497_3),
+    .I0(sifreKaydetme),
+    .I1(butonSayaci[2]),
+    .I2(n497_4),
+    .I3(butonSayaci[0]) 
+);
+defparam n497_s0.INIT=16'h4FF0;
+  LUT4 n715_s0 (
+    .F(n715_3),
+    .I0(butonSayaci[1]),
+    .I1(butonSayaci[2]),
+    .I2(n502_5),
+    .I3(n515_4) 
+);
+defparam n715_s0.INIT=16'h4000;
+  LUT2 n721_s0 (
+    .F(n721_3),
+    .I0(n451_3),
+    .I1(n715_3) 
+);
+defparam n721_s0.INIT=4'h4;
+  LUT2 n723_s0 (
+    .F(n723_3),
+    .I0(butonA_d),
+    .I1(butonB_d) 
+);
+defparam n723_s0.INIT=4'h8;
+  LUT4 sifreDogrulama_s2 (
+    .F(sifreDogrulama_6),
+    .I0(butonSayaci[1]),
+    .I1(butonSayaci[2]),
+    .I2(n502_5),
+    .I3(butonSayaci_3_8) 
+);
+defparam sifreDogrulama_s2.INIT=16'h4000;
+  LUT2 yanlis_s3 (
+    .F(yanlis_8),
+    .I0(n451_3),
+    .I1(n715_3) 
+);
+defparam yanlis_s3.INIT=4'h8;
+  LUT3 n703_s2 (
+    .F(n703_6),
+    .I0(butonA_d),
+    .I1(butonB_d),
+    .I2(butonuAlgila) 
+);
+defparam n703_s2.INIT=8'hBF;
+  LUT4 n322_s2 (
+    .F(n322_6),
+    .I0(n218_5),
+    .I1(n322_7),
+    .I2(n322_8),
+    .I3(sifreKaydetme) 
+);
+defparam n322_s2.INIT=16'hFF0B;
+  LUT4 led_2_s5 (
+    .F(led_1_6),
+    .I0(n218_5),
+    .I1(n320_9),
+    .I2(dogru),
+    .I3(n1019_6) 
+);
+defparam led_2_s5.INIT=16'hEEF0;
+  LUT4 n250_s4 (
+    .F(n250_9),
+    .I0(dogru),
+    .I1(n320_9),
+    .I2(sifreKaydetme),
+    .I3(sifreDogrulama) 
+);
+defparam n250_s4.INIT=16'hF3F5;
+  LUT2 n502_s2 (
+    .F(n502_5),
+    .I0(GND),
+    .I1(butonSayaci[0]) 
+);
+defparam n502_s2.INIT=4'h4;
+  LUT4 n503_s1 (
+    .F(n503_4),
+    .I0(butonSayaci[0]),
+    .I1(butonSayaci[1]),
+    .I2(GND),
+    .I3(butonSayaci[2]) 
+);
+defparam n503_s1.INIT=16'h0100;
+  LUT4 n505_s1 (
+    .F(n505_4),
+    .I0(butonSayaci[0]),
+    .I1(butonSayaci[2]),
+    .I2(GND),
+    .I3(butonSayaci[1]) 
+);
+defparam n505_s1.INIT=16'h0100;
+  LUT4 n507_s1 (
+    .F(n507_4),
+    .I0(butonSayaci[0]),
+    .I1(butonSayaci[1]),
+    .I2(butonSayaci[2]),
+    .I3(GND) 
+);
+defparam n507_s1.INIT=16'h0001;
+  LUT3 n515_s1 (
+    .F(n515_4),
+    .I0(sifreKaydetme),
+    .I1(sifreDogrulama),
+    .I2(n1051_3) 
+);
+defparam n515_s1.INIT=8'h40;
+  LUT3 n497_s1 (
+    .F(n497_4),
+    .I0(butonSayaci[1]),
+    .I1(butonSayaci[2]),
+    .I2(GND) 
+);
+defparam n497_s1.INIT=8'h07;
+  LUT4 n218_s2 (
+    .F(n218_5),
+    .I0(sayac[12]),
+    .I1(n218_6),
+    .I2(n218_7),
+    .I3(n218_8) 
+);
+defparam n218_s2.INIT=16'h4000;
+  LUT2 n320_s5 (
+    .F(n320_9),
+    .I0(n218_8),
+    .I1(n320_10) 
+);
+defparam n320_s5.INIT=4'h8;
+  LUT4 n322_s3 (
+    .F(n322_7),
+    .I0(n218_8),
+    .I1(n320_10),
+    .I2(led_d[0]),
+    .I3(sifreDogrulama) 
+);
+defparam n322_s3.INIT=16'h8F00;
+  LUT3 n322_s4 (
+    .F(n322_8),
+    .I0(sifreDogrulama),
+    .I1(dogru),
+    .I2(led_d[0]) 
+);
+defparam n322_s4.INIT=8'h01;
+  LUT4 n218_s3 (
+    .F(n218_6),
+    .I0(sayac[15]),
+    .I1(sayac[13]),
+    .I2(sayac[16]),
+    .I3(n218_9) 
+);
+defparam n218_s3.INIT=16'h4000;
+  LUT4 n218_s4 (
+    .F(n218_7),
+    .I0(sayac[19]),
+    .I1(n218_10),
+    .I2(sayac[21]),
+    .I3(n218_11) 
+);
+defparam n218_s4.INIT=16'h4000;
+  LUT4 n218_s5 (
+    .F(n218_8),
+    .I0(n218_12),
+    .I1(n218_13),
+    .I2(n218_14),
+    .I3(n218_15) 
+);
+defparam n218_s5.INIT=16'h8000;
+  LUT4 n320_s6 (
+    .F(n320_10),
+    .I0(n320_11),
+    .I1(n218_11),
+    .I2(n320_12),
+    .I3(n320_13) 
+);
+defparam n320_s6.INIT=16'h8000;
+  LUT4 n218_s6 (
+    .F(n218_9),
+    .I0(sayac[7]),
+    .I1(sayac[9]),
+    .I2(sayac[8]),
+    .I3(sayac[11]) 
+);
+defparam n218_s6.INIT=16'h1000;
+  LUT2 n218_s7 (
+    .F(n218_10),
+    .I0(sayac[23]),
+    .I1(sayac[24]) 
+);
+defparam n218_s7.INIT=4'h4;
+  LUT4 n218_s8 (
+    .F(n218_11),
+    .I0(sayac[27]),
+    .I1(sayac[28]),
+    .I2(sayac[29]),
+    .I3(sayac[30]) 
+);
+defparam n218_s8.INIT=16'h0001;
+  LUT4 n218_s9 (
+    .F(n218_12),
+    .I0(sayac[4]),
+    .I1(sayac[5]),
+    .I2(sayac[6]),
+    .I3(sayac[17]) 
+);
+defparam n218_s9.INIT=16'h0001;
+  LUT4 n218_s10 (
+    .F(n218_13),
+    .I0(sayac[0]),
+    .I1(sayac[1]),
+    .I2(sayac[2]),
+    .I3(sayac[3]) 
+);
+defparam n218_s10.INIT=16'h0001;
+  LUT4 n218_s11 (
+    .F(n218_14),
+    .I0(sayac[22]),
+    .I1(sayac[25]),
+    .I2(sayac[26]),
+    .I3(sayac[31]) 
+);
+defparam n218_s11.INIT=16'h0001;
+  LUT4 n218_s12 (
+    .F(n218_15),
+    .I0(sayac[14]),
+    .I1(sayac[18]),
+    .I2(sayac[10]),
+    .I3(sayac[20]) 
+);
+defparam n218_s12.INIT=16'h1000;
+  LUT4 n320_s7 (
+    .F(n320_11),
+    .I0(sayac[13]),
+    .I1(sayac[16]),
+    .I2(sayac[15]),
+    .I3(sayac[12]) 
+);
+defparam n320_s7.INIT=16'h1000;
+  LUT4 n320_s8 (
+    .F(n320_12),
+    .I0(sayac[21]),
+    .I1(sayac[24]),
+    .I2(sayac[23]),
+    .I3(sayac[19]) 
+);
+defparam n320_s8.INIT=16'h1000;
+  LUT4 n320_s9 (
+    .F(n320_13),
+    .I0(sayac[8]),
+    .I1(sayac[11]),
+    .I2(sayac[9]),
+    .I3(sayac[7]) 
+);
+defparam n320_s9.INIT=16'h1000;
+  LUT4 n502_s3 (
+    .F(n502_7),
+    .I0(sifreKaydetme),
+    .I1(butonA_d),
+    .I2(butonB_d),
+    .I3(butonuAlgila) 
+);
+defparam n502_s3.INIT=16'h2800;
+  LUT4 butonSayaci_3_s3 (
+    .F(butonSayaci_3_8),
+    .I0(n1019_6),
+    .I1(butonA_d),
+    .I2(butonB_d),
+    .I3(butonuAlgila) 
+);
+defparam butonSayaci_3_s3.INIT=16'h2800;
+  LUT3 n93_s5 (
+    .F(n93_11),
+    .I0(sifreKaydetme),
+    .I1(n218_8),
+    .I2(n320_10) 
+);
+defparam n93_s5.INIT=8'h7F;
+  LUT4 n320_s10 (
+    .F(n320_15),
+    .I0(n218_5),
+    .I1(n218_8),
+    .I2(n320_10),
+    .I3(sifreKaydetme) 
+);
+defparam n320_s10.INIT=16'hEAFF;
+  LUT3 n504_s2 (
+    .F(n504_6),
+    .I0(butonSayaci[2]),
+    .I1(GND),
+    .I2(butonSayaci[0]) 
+);
+defparam n504_s2.INIT=8'h10;
+  LUT4 n519_s1 (
+    .F(n519_5),
+    .I0(n507_4),
+    .I1(sifreKaydetme),
+    .I2(sifreDogrulama),
+    .I3(n1051_3) 
+);
+defparam n519_s1.INIT=16'h2000;
+  LUT4 n517_s1 (
+    .F(n517_5),
+    .I0(n505_4),
+    .I1(sifreKaydetme),
+    .I2(sifreDogrulama),
+    .I3(n1051_3) 
+);
+defparam n517_s1.INIT=16'h2000;
+  LUT4 n515_s2 (
+    .F(n515_6),
+    .I0(n503_4),
+    .I1(sifreKaydetme),
+    .I2(sifreDogrulama),
+    .I3(n1051_3) 
+);
+defparam n515_s2.INIT=16'h2000;
+  LUT3 n218_s13 (
+    .F(n218_17),
+    .I0(sifreKaydetme),
+    .I1(sifreDogrulama),
+    .I2(n218_5) 
+);
+defparam n218_s13.INIT=8'hE0;
+  LUT3 n38_s3 (
+    .F(n38_11),
+    .I0(sayac[0]),
+    .I1(sifreKaydetme),
+    .I2(sifreDogrulama) 
+);
+defparam n38_s3.INIT=8'h56;
+  LUT2 n1019_s1 (
+    .F(n1019_6),
+    .I0(sifreKaydetme),
+    .I1(sifreDogrulama) 
+);
+defparam n1019_s1.INIT=4'hE;
+  LUT4 n496_s1 (
+    .F(n496_5),
+    .I0(butonSayaci[1]),
+    .I1(butonSayaci[2]),
+    .I2(GND),
+    .I3(butonSayaci[0]) 
+);
+defparam n496_s1.INIT=16'hA9AA;
+  DFFRE sayac_30_s0 (
+    .Q(sayac[30]),
+    .D(n8_1),
+    .CLK(clk_d),
+    .CE(n1019_6),
+    .RESET(n218_17) 
+);
+defparam sayac_30_s0.INIT=1'b0;
+  DFFRE sayac_29_s0 (
+    .Q(sayac[29]),
+    .D(n9_1),
+    .CLK(clk_d),
+    .CE(n1019_6),
+    .RESET(n218_17) 
+);
+defparam sayac_29_s0.INIT=1'b0;
+  DFFRE sayac_28_s0 (
+    .Q(sayac[28]),
+    .D(n10_1),
+    .CLK(clk_d),
+    .CE(n1019_6),
+    .RESET(n218_17) 
+);
+defparam sayac_28_s0.INIT=1'b0;
+  DFFRE sayac_27_s0 (
+    .Q(sayac[27]),
+    .D(n11_1),
+    .CLK(clk_d),
+    .CE(n1019_6),
+    .RESET(n218_17) 
+);
+defparam sayac_27_s0.INIT=1'b0;
+  DFFRE sayac_26_s0 (
+    .Q(sayac[26]),
+    .D(n12_1),
+    .CLK(clk_d),
+    .CE(n1019_6),
+    .RESET(n218_17) 
+);
+defparam sayac_26_s0.INIT=1'b0;
+  DFFRE sayac_25_s0 (
+    .Q(sayac[25]),
+    .D(n13_1),
+    .CLK(clk_d),
+    .CE(n1019_6),
+    .RESET(n218_17) 
+);
+defparam sayac_25_s0.INIT=1'b0;
+  DFFRE sayac_24_s0 (
+    .Q(sayac[24]),
+    .D(n14_1),
+    .CLK(clk_d),
+    .CE(n1019_6),
+    .RESET(n218_17) 
+);
+defparam sayac_24_s0.INIT=1'b0;
+  DFFRE sayac_23_s0 (
+    .Q(sayac[23]),
+    .D(n15_1),
+    .CLK(clk_d),
+    .CE(n1019_6),
+    .RESET(n218_17) 
+);
+defparam sayac_23_s0.INIT=1'b0;
+  DFFRE sayac_22_s0 (
+    .Q(sayac[22]),
+    .D(n16_1),
+    .CLK(clk_d),
+    .CE(n1019_6),
+    .RESET(n218_17) 
+);
+defparam sayac_22_s0.INIT=1'b0;
+  DFFRE sayac_21_s0 (
+    .Q(sayac[21]),
+    .D(n17_1),
+    .CLK(clk_d),
+    .CE(n1019_6),
+    .RESET(n218_17) 
+);
+defparam sayac_21_s0.INIT=1'b0;
+  DFFRE sayac_20_s0 (
+    .Q(sayac[20]),
+    .D(n18_1),
+    .CLK(clk_d),
+    .CE(n1019_6),
+    .RESET(n218_17) 
+);
+defparam sayac_20_s0.INIT=1'b0;
+  DFFRE sayac_19_s0 (
+    .Q(sayac[19]),
+    .D(n19_1),
+    .CLK(clk_d),
+    .CE(n1019_6),
+    .RESET(n218_17) 
+);
+defparam sayac_19_s0.INIT=1'b0;
+  DFFRE sayac_18_s0 (
+    .Q(sayac[18]),
+    .D(n20_1),
+    .CLK(clk_d),
+    .CE(n1019_6),
+    .RESET(n218_17) 
+);
+defparam sayac_18_s0.INIT=1'b0;
+  DFFRE sayac_17_s0 (
+    .Q(sayac[17]),
+    .D(n21_1),
+    .CLK(clk_d),
+    .CE(n1019_6),
+    .RESET(n218_17) 
+);
+defparam sayac_17_s0.INIT=1'b0;
+  DFFRE sayac_16_s0 (
+    .Q(sayac[16]),
+    .D(n22_1),
+    .CLK(clk_d),
+    .CE(n1019_6),
+    .RESET(n218_17) 
+);
+defparam sayac_16_s0.INIT=1'b0;
+  DFFRE sayac_15_s0 (
+    .Q(sayac[15]),
+    .D(n23_1),
+    .CLK(clk_d),
+    .CE(n1019_6),
+    .RESET(n218_17) 
+);
+defparam sayac_15_s0.INIT=1'b0;
+  DFFRE sayac_14_s0 (
+    .Q(sayac[14]),
+    .D(n24_1),
+    .CLK(clk_d),
+    .CE(n1019_6),
+    .RESET(n218_17) 
+);
+defparam sayac_14_s0.INIT=1'b0;
+  DFFRE sayac_13_s0 (
+    .Q(sayac[13]),
+    .D(n25_1),
+    .CLK(clk_d),
+    .CE(n1019_6),
+    .RESET(n218_17) 
+);
+defparam sayac_13_s0.INIT=1'b0;
+  DFFRE sayac_12_s0 (
+    .Q(sayac[12]),
+    .D(n26_1),
+    .CLK(clk_d),
+    .CE(n1019_6),
+    .RESET(n218_17) 
+);
+defparam sayac_12_s0.INIT=1'b0;
+  DFFRE sayac_11_s0 (
+    .Q(sayac[11]),
+    .D(n27_1),
+    .CLK(clk_d),
+    .CE(n1019_6),
+    .RESET(n218_17) 
+);
+defparam sayac_11_s0.INIT=1'b0;
+  DFFRE sayac_10_s0 (
+    .Q(sayac[10]),
+    .D(n28_1),
+    .CLK(clk_d),
+    .CE(n1019_6),
+    .RESET(n218_17) 
+);
+defparam sayac_10_s0.INIT=1'b0;
+  DFFRE sayac_9_s0 (
+    .Q(sayac[9]),
+    .D(n29_1),
+    .CLK(clk_d),
+    .CE(n1019_6),
+    .RESET(n218_17) 
+);
+defparam sayac_9_s0.INIT=1'b0;
+  DFFRE sayac_8_s0 (
+    .Q(sayac[8]),
+    .D(n30_1),
+    .CLK(clk_d),
+    .CE(n1019_6),
+    .RESET(n218_17) 
+);
+defparam sayac_8_s0.INIT=1'b0;
+  DFFRE sayac_7_s0 (
+    .Q(sayac[7]),
+    .D(n31_1),
+    .CLK(clk_d),
+    .CE(n1019_6),
+    .RESET(n218_17) 
+);
+defparam sayac_7_s0.INIT=1'b0;
+  DFFRE sayac_6_s0 (
+    .Q(sayac[6]),
+    .D(n32_1),
+    .CLK(clk_d),
+    .CE(n1019_6),
+    .RESET(n218_17) 
+);
+defparam sayac_6_s0.INIT=1'b0;
+  DFFRE sayac_5_s0 (
+    .Q(sayac[5]),
+    .D(n33_1),
+    .CLK(clk_d),
+    .CE(n1019_6),
+    .RESET(n218_17) 
+);
+defparam sayac_5_s0.INIT=1'b0;
+  DFFRE sayac_4_s0 (
+    .Q(sayac[4]),
+    .D(n34_1),
+    .CLK(clk_d),
+    .CE(n1019_6),
+    .RESET(n218_17) 
+);
+defparam sayac_4_s0.INIT=1'b0;
+  DFFRE sayac_3_s0 (
+    .Q(sayac[3]),
+    .D(n35_1),
+    .CLK(clk_d),
+    .CE(n1019_6),
+    .RESET(n218_17) 
+);
+defparam sayac_3_s0.INIT=1'b0;
+  DFFRE sayac_2_s0 (
+    .Q(sayac[2]),
+    .D(n36_1),
+    .CLK(clk_d),
+    .CE(n1019_6),
+    .RESET(n218_17) 
+);
+defparam sayac_2_s0.INIT=1'b0;
+  DFFRE sayac_1_s0 (
+    .Q(sayac[1]),
+    .D(n37_1),
+    .CLK(clk_d),
+    .CE(n1019_6),
+    .RESET(n218_17) 
+);
+defparam sayac_1_s0.INIT=1'b0;
+  DFFSE butonuAlgila_s0 (
+    .Q(butonuAlgila),
+    .D(GND),
+    .CLK(clk_d),
+    .CE(n1051_3),
+    .SET(n723_3) 
+);
+defparam butonuAlgila_s0.INIT=1'b1;
+  DFFE butonSayaci_2_s0 (
+    .Q(butonSayaci[2]),
+    .D(n495_3),
+    .CLK(clk_d),
+    .CE(butonSayaci_3_8) 
+);
+defparam butonSayaci_2_s0.INIT=1'b0;
+  DFFE butonSayaci_1_s0 (
+    .Q(butonSayaci[1]),
+    .D(n496_5),
+    .CLK(clk_d),
+    .CE(butonSayaci_3_8) 
+);
+defparam butonSayaci_1_s0.INIT=1'b0;
+  DFFE butonSayaci_0_s0 (
+    .Q(butonSayaci[0]),
+    .D(n497_3),
+    .CLK(clk_d),
+    .CE(butonSayaci_3_8) 
+);
+defparam butonSayaci_0_s0.INIT=1'b0;
+  DFFE sifreDogrulama_s0 (
+    .Q(sifreDogrulama),
+    .D(sifreKaydetme),
+    .CLK(clk_d),
+    .CE(sifreDogrulama_6) 
+);
+defparam sifreDogrulama_s0.INIT=1'b0;
+  DFFRE sayac_31_s0 (
+    .Q(sayac[31]),
+    .D(n7_1),
+    .CLK(clk_d),
+    .CE(n1019_6),
+    .RESET(n218_17) 
+);
+defparam sayac_31_s0.INIT=1'b0;
+  DFFSE sifreKaydetme_s1 (
+    .Q(sifreKaydetme),
+    .D(GND),
+    .CLK(clk_d),
+    .CE(sifreDogrulama_6),
+    .SET(GND) 
+);
+defparam sifreKaydetme_s1.INIT=1'b1;
+  DFFE sifre_5_s1 (
+    .Q(sifre[5]),
+    .D(n703_6),
+    .CLK(clk_d),
+    .CE(n502_3) 
+);
+defparam sifre_5_s1.INIT=1'b0;
+  DFFE sifre_4_s1 (
+    .Q(sifre[4]),
+    .D(n703_6),
+    .CLK(clk_d),
+    .CE(n503_3) 
+);
+defparam sifre_4_s1.INIT=1'b0;
+  DFFE sifre_3_s1 (
+    .Q(sifre[3]),
+    .D(n703_6),
+    .CLK(clk_d),
+    .CE(n504_3) 
+);
+defparam sifre_3_s1.INIT=1'b0;
+  DFFE sifre_2_s1 (
+    .Q(sifre[2]),
+    .D(n703_6),
+    .CLK(clk_d),
+    .CE(n505_3) 
+);
+defparam sifre_2_s1.INIT=1'b0;
+  DFFE sifre_1_s1 (
+    .Q(sifre[1]),
+    .D(n703_6),
+    .CLK(clk_d),
+    .CE(n506_3) 
+);
+defparam sifre_1_s1.INIT=1'b0;
+  DFFE sifre_0_s1 (
+    .Q(sifre[0]),
+    .D(n703_6),
+    .CLK(clk_d),
+    .CE(n507_3) 
+);
+defparam sifre_0_s1.INIT=1'b0;
+  DFFE denenenSifre_5_s1 (
+    .Q(denenenSifre[5]),
+    .D(VCC),
+    .CLK(clk_d),
+    .CE(n715_3) 
+);
+defparam denenenSifre_5_s1.INIT=1'b0;
+  DFFE denenenSifre_4_s1 (
+    .Q(denenenSifre[4]),
+    .D(n703_6),
+    .CLK(clk_d),
+    .CE(n515_6) 
+);
+defparam denenenSifre_4_s1.INIT=1'b0;
+  DFFE denenenSifre_3_s1 (
+    .Q(denenenSifre[3]),
+    .D(n703_6),
+    .CLK(clk_d),
+    .CE(n516_3) 
+);
+defparam denenenSifre_3_s1.INIT=1'b0;
+  DFFE denenenSifre_2_s1 (
+    .Q(denenenSifre[2]),
+    .D(n703_6),
+    .CLK(clk_d),
+    .CE(n517_5) 
+);
+defparam denenenSifre_2_s1.INIT=1'b0;
+  DFFE denenenSifre_1_s1 (
+    .Q(denenenSifre[1]),
+    .D(n703_6),
+    .CLK(clk_d),
+    .CE(n518_3) 
+);
+defparam denenenSifre_1_s1.INIT=1'b0;
+  DFFE denenenSifre_0_s1 (
+    .Q(denenenSifre[0]),
+    .D(n703_6),
+    .CLK(clk_d),
+    .CE(n519_5) 
+);
+defparam denenenSifre_0_s1.INIT=1'b0;
+  DFFE dogru_s1 (
+    .Q(dogru),
+    .D(VCC),
+    .CLK(clk_d),
+    .CE(n721_3) 
+);
+defparam dogru_s1.INIT=1'b0;
+  DFFE yanlis_s1 (
+    .Q(yanlis),
+    .D(VCC),
+    .CLK(clk_d),
+    .CE(yanlis_8) 
+);
+defparam yanlis_s1.INIT=1'b0;
+  DFFSE led_2_s3 (
+    .Q(led_d[2]),
+    .D(n250_9),
+    .CLK(clk_d),
+    .CE(led_1_6),
+    .SET(yanlis) 
+);
+  DFFSE led_1_s2 (
+    .Q(led_d[1]),
+    .D(n93_11),
+    .CLK(clk_d),
+    .CE(led_1_6),
+    .SET(yanlis) 
+);
+  DFFRE led_0_s2 (
+    .Q(led_d[0]),
+    .D(n322_6),
+    .CLK(clk_d),
+    .CE(n320_15),
+    .RESET(yanlis) 
+);
+  DFFR sayac_0_s1 (
+    .Q(sayac[0]),
+    .D(n38_11),
+    .CLK(clk_d),
+    .RESET(n218_17) 
+);
+defparam sayac_0_s1.INIT=1'b0;
+  ALU n37_s (
+    .SUM(n37_1),
+    .COUT(n37_2),
+    .I0(sayac[1]),
+    .I1(sayac[0]),
+    .I3(GND),
+    .CIN(GND) 
+);
+defparam n37_s.ALU_MODE=0;
+  ALU n36_s (
+    .SUM(n36_1),
+    .COUT(n36_2),
+    .I0(sayac[2]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n37_2) 
+);
+defparam n36_s.ALU_MODE=0;
+  ALU n35_s (
+    .SUM(n35_1),
+    .COUT(n35_2),
+    .I0(sayac[3]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n36_2) 
+);
+defparam n35_s.ALU_MODE=0;
+  ALU n34_s (
+    .SUM(n34_1),
+    .COUT(n34_2),
+    .I0(sayac[4]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n35_2) 
+);
+defparam n34_s.ALU_MODE=0;
+  ALU n33_s (
+    .SUM(n33_1),
+    .COUT(n33_2),
+    .I0(sayac[5]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n34_2) 
+);
+defparam n33_s.ALU_MODE=0;
+  ALU n32_s (
+    .SUM(n32_1),
+    .COUT(n32_2),
+    .I0(sayac[6]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n33_2) 
+);
+defparam n32_s.ALU_MODE=0;
+  ALU n31_s (
+    .SUM(n31_1),
+    .COUT(n31_2),
+    .I0(sayac[7]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n32_2) 
+);
+defparam n31_s.ALU_MODE=0;
+  ALU n30_s (
+    .SUM(n30_1),
+    .COUT(n30_2),
+    .I0(sayac[8]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n31_2) 
+);
+defparam n30_s.ALU_MODE=0;
+  ALU n29_s (
+    .SUM(n29_1),
+    .COUT(n29_2),
+    .I0(sayac[9]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n30_2) 
+);
+defparam n29_s.ALU_MODE=0;
+  ALU n28_s (
+    .SUM(n28_1),
+    .COUT(n28_2),
+    .I0(sayac[10]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n29_2) 
+);
+defparam n28_s.ALU_MODE=0;
+  ALU n27_s (
+    .SUM(n27_1),
+    .COUT(n27_2),
+    .I0(sayac[11]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n28_2) 
+);
+defparam n27_s.ALU_MODE=0;
+  ALU n26_s (
+    .SUM(n26_1),
+    .COUT(n26_2),
+    .I0(sayac[12]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n27_2) 
+);
+defparam n26_s.ALU_MODE=0;
+  ALU n25_s (
+    .SUM(n25_1),
+    .COUT(n25_2),
+    .I0(sayac[13]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n26_2) 
+);
+defparam n25_s.ALU_MODE=0;
+  ALU n24_s (
+    .SUM(n24_1),
+    .COUT(n24_2),
+    .I0(sayac[14]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n25_2) 
+);
+defparam n24_s.ALU_MODE=0;
+  ALU n23_s (
+    .SUM(n23_1),
+    .COUT(n23_2),
+    .I0(sayac[15]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n24_2) 
+);
+defparam n23_s.ALU_MODE=0;
+  ALU n22_s (
+    .SUM(n22_1),
+    .COUT(n22_2),
+    .I0(sayac[16]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n23_2) 
+);
+defparam n22_s.ALU_MODE=0;
+  ALU n21_s (
+    .SUM(n21_1),
+    .COUT(n21_2),
+    .I0(sayac[17]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n22_2) 
+);
+defparam n21_s.ALU_MODE=0;
+  ALU n20_s (
+    .SUM(n20_1),
+    .COUT(n20_2),
+    .I0(sayac[18]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n21_2) 
+);
+defparam n20_s.ALU_MODE=0;
+  ALU n19_s (
+    .SUM(n19_1),
+    .COUT(n19_2),
+    .I0(sayac[19]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n20_2) 
+);
+defparam n19_s.ALU_MODE=0;
+  ALU n18_s (
+    .SUM(n18_1),
+    .COUT(n18_2),
+    .I0(sayac[20]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n19_2) 
+);
+defparam n18_s.ALU_MODE=0;
+  ALU n17_s (
+    .SUM(n17_1),
+    .COUT(n17_2),
+    .I0(sayac[21]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n18_2) 
+);
+defparam n17_s.ALU_MODE=0;
+  ALU n16_s (
+    .SUM(n16_1),
+    .COUT(n16_2),
+    .I0(sayac[22]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n17_2) 
+);
+defparam n16_s.ALU_MODE=0;
+  ALU n15_s (
+    .SUM(n15_1),
+    .COUT(n15_2),
+    .I0(sayac[23]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n16_2) 
+);
+defparam n15_s.ALU_MODE=0;
+  ALU n14_s (
+    .SUM(n14_1),
+    .COUT(n14_2),
+    .I0(sayac[24]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n15_2) 
+);
+defparam n14_s.ALU_MODE=0;
+  ALU n13_s (
+    .SUM(n13_1),
+    .COUT(n13_2),
+    .I0(sayac[25]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n14_2) 
+);
+defparam n13_s.ALU_MODE=0;
+  ALU n12_s (
+    .SUM(n12_1),
+    .COUT(n12_2),
+    .I0(sayac[26]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n13_2) 
+);
+defparam n12_s.ALU_MODE=0;
+  ALU n11_s (
+    .SUM(n11_1),
+    .COUT(n11_2),
+    .I0(sayac[27]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n12_2) 
+);
+defparam n11_s.ALU_MODE=0;
+  ALU n10_s (
+    .SUM(n10_1),
+    .COUT(n10_2),
+    .I0(sayac[28]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n11_2) 
+);
+defparam n10_s.ALU_MODE=0;
+  ALU n9_s (
+    .SUM(n9_1),
+    .COUT(n9_2),
+    .I0(sayac[29]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n10_2) 
+);
+defparam n9_s.ALU_MODE=0;
+  ALU n8_s (
+    .SUM(n8_1),
+    .COUT(n8_2),
+    .I0(sayac[30]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n9_2) 
+);
+defparam n8_s.ALU_MODE=0;
+  ALU n7_s (
+    .SUM(n7_1),
+    .COUT(n7_0_COUT),
+    .I0(sayac[31]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n8_2) 
+);
+defparam n7_s.ALU_MODE=0;
+  ALU n446_s0 (
+    .SUM(n446_1_SUM),
+    .COUT(n446_3),
+    .I0(sifre[0]),
+    .I1(denenenSifre[0]),
+    .I3(GND),
+    .CIN(GND) 
+);
+defparam n446_s0.ALU_MODE=3;
+  ALU n447_s0 (
+    .SUM(n447_1_SUM),
+    .COUT(n447_3),
+    .I0(sifre[1]),
+    .I1(denenenSifre[1]),
+    .I3(GND),
+    .CIN(n446_3) 
+);
+defparam n447_s0.ALU_MODE=3;
+  ALU n448_s0 (
+    .SUM(n448_1_SUM),
+    .COUT(n448_3),
+    .I0(sifre[2]),
+    .I1(denenenSifre[2]),
+    .I3(GND),
+    .CIN(n447_3) 
+);
+defparam n448_s0.ALU_MODE=3;
+  ALU n449_s0 (
+    .SUM(n449_1_SUM),
+    .COUT(n449_3),
+    .I0(sifre[3]),
+    .I1(denenenSifre[3]),
+    .I3(GND),
+    .CIN(n448_3) 
+);
+defparam n449_s0.ALU_MODE=3;
+  ALU n450_s0 (
+    .SUM(n450_1_SUM),
+    .COUT(n450_3),
+    .I0(sifre[4]),
+    .I1(denenenSifre[4]),
+    .I3(GND),
+    .CIN(n449_3) 
+);
+defparam n450_s0.ALU_MODE=3;
+  ALU n451_s0 (
+    .SUM(n451_1_SUM),
+    .COUT(n451_3),
+    .I0(sifre[5]),
+    .I1(denenenSifre[5]),
+    .I3(GND),
+    .CIN(n450_3) 
+);
+defparam n451_s0.ALU_MODE=3;
+  VCC VCC_cZ (
+    .V(VCC)
+);
+  GND GND_cZ (
+    .G(GND)
+);
+  GSR GSR (
+    .GSRI(VCC) 
+);
+endmodule /* sifrelemeSistemi */
